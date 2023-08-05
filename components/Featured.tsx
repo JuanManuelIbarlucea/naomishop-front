@@ -4,18 +4,22 @@ import Button from './Button';
 import { CartIcon } from './icons/CartIcon';
 import { ProductType } from '@/types';
 import { ButtonLink } from './ButtonLink';
-import { useCartContext } from '../contexts/CartContext';
+import { useCartContext } from '@/contexts/CartContext';
 
 const BG = styled.div`
   background-color: #222;
   color: #fff;
-  padding: 3rem 0;
+  padding: 50px 0;
 `;
 
 const Title = styled.h1`
   margin: 0;
   font-weight: normal;
-  font-size: 3rem;
+  font-size: 1.5rem;
+
+  @media screen and (min-width: 768px) {
+    font-size: 3rem;
+  }
 `;
 
 const Description = styled.p`
@@ -25,10 +29,29 @@ const Description = styled.p`
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
   img {
     max-width: 100%;
+    max-height: 350px;
+    display: block;
+    margin: 0;
+  }
+
+  div:nth-child(1) {
+    order: 2;
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 0.9fr 1.1fr;
+
+    div:nth-child(1) {
+      order: 0;
+    }
+
+    img {
+      max-width: 100%;
+    }
   }
 `;
 
@@ -39,8 +62,14 @@ const Column = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
-  display: flex;
   gap: 0.5rem;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 export default function Featured({ product }: { product: ProductType }) {
@@ -60,10 +89,12 @@ export default function Featured({ product }: { product: ProductType }) {
                   outline
                   white
                   size="lg"
+                  fullWidth
                 >
                   Read more
                 </ButtonLink>
                 <Button
+                  fullWidth
                   primary
                   size="lg"
                   onClick={() => addProduct(product._id)}

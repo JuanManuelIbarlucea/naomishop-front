@@ -2,29 +2,36 @@ import { useState } from 'react';
 import styled from 'styled-components';
 const Image = styled.img`
   max-width: 100%;
-  max-height: 100%;
+  max-height: 60px;
 `;
 
 const BigImage = styled.img`
   max-width: 100%;
-  height: 300px;
+  height: 350px;
 `;
 
 const BigImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
   text-align: center;
 `;
 
 const ImagesWrapper = styled.div`
   display: flex;
   gap: 10px;
+  width: 100%;
+  justify-content: center;
 `;
 
 const ImageButton = styled.div<any>`
   border: 2px solid #ccc;
   border-radius: 5px;
-  height: 40px;
+  height: 60px;
   padding: 3px;
   margin-top: 10px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
   ${(props) =>
     props.active
@@ -33,7 +40,6 @@ const ImageButton = styled.div<any>`
   `
       : `
       border-color: transparent;
-      opacity: .5;
       `}
 `;
 

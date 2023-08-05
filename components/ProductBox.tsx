@@ -2,7 +2,7 @@ import { ProductType } from '@/types';
 import styled from 'styled-components';
 import Button from './Button';
 import Link from 'next/link';
-import { useCartContext } from '../contexts/CartContext';
+import { useCartContext } from '@/contexts/CartContext';
 
 const WhiteBox = styled(Link)`
   background-color: #fff;
@@ -34,15 +34,24 @@ const ProductInfoBox = styled.div`
 `;
 
 const PriceRow = styled.div`
-  display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 0.125rem;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: 10px;
+  }
 `;
 
 const Price = styled.div`
-  font-size: 1.5rem;
-  font-weight: 7005;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: right;
+  @media screen and (min-width: 768px) {
+    font-size: 1.2rem;
+    text-align: left;
+  }
 `;
 
 export default function ProductBox({ _id, name, price, images }: ProductType) {
@@ -59,7 +68,7 @@ export default function ProductBox({ _id, name, price, images }: ProductType) {
         <Name href={`/product/${_id}`}>{name}</Name>
         <PriceRow>
           <Price>${price}</Price>
-          <Button primary outline onClick={() => addProduct(_id)}>
+          <Button fullWidth primary outline onClick={() => addProduct(_id)}>
             Add to cart
           </Button>
         </PriceRow>

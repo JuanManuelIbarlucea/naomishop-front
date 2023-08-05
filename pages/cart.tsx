@@ -13,15 +13,18 @@ import WhiteBox from '@/components/WhiteBox';
 
 const ColumnsWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
   gap: 40px;
   margin-top: 40px;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
 `;
 
 const ProductImageBox = styled.div`
-  width: 100px;
+  width: 70px;
   height: 100px;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
@@ -29,13 +32,33 @@ const ProductImageBox = styled.div`
   border-radius: 10px;
 
   img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 60px;
+    max-height: 60px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+
+    img {
+      max-width: 80px;
+      max-height: 80px;
+    }
   }
 `;
 
+const QuantityWrapper = styled.div`
+  display: flex;
+`;
+
 const QuantityLabel = styled.span`
-  padding: 0 10px;
+  padding: 0 15px;
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+    padding: 0 10px;
+  }
 `;
 
 const SuccessBox = styled.div`
@@ -77,7 +100,7 @@ export default function CartPage() {
           <WhiteBox>
             <CheckIcon />
             <h1>Thank you for your purchase!</h1>
-            <p>We will email you when your order is on it's way.</p>
+            <p>We will email you when your order is on it&apos;s way.</p>
           </WhiteBox>
         </SuccessBox>
       </Center>
@@ -114,13 +137,15 @@ export default function CartPage() {
                           {product.name}
                         </td>
                         <td>
-                          <Button onClick={() => removeProduct(product._id)}>
-                            -
-                          </Button>
-                          <QuantityLabel>{productAmount}</QuantityLabel>
-                          <Button onClick={() => addProduct(product._id)}>
-                            +
-                          </Button>
+                          <QuantityWrapper>
+                            <Button onClick={() => removeProduct(product._id)}>
+                              -
+                            </Button>
+                            <QuantityLabel>{productAmount}</QuantityLabel>
+                            <Button onClick={() => addProduct(product._id)}>
+                              +
+                            </Button>
+                          </QuantityWrapper>
                         </td>
                         <td>${product.price * productAmount}</td>
                       </tr>

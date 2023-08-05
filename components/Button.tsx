@@ -7,7 +7,7 @@ export interface ButtonProps {
   white?: boolean;
   primary?: boolean;
   outline?: boolean;
-  block?: boolean;
+  fullWidth?: boolean;
   children?: ReactNode;
   onClick?: () => void;
 }
@@ -21,6 +21,7 @@ export const ButtonStyle = css<ButtonProps>`
   font-weight: bold;
   align-items: center;
   justify-content: center;
+  text-align: center;
   svg {
     margin-right: 0.5rem;
     height: 1rem;
@@ -67,9 +68,9 @@ export const ButtonStyle = css<ButtonProps>`
       }
     `};
   ${(props) =>
-    props.block &&
+    props.fullWidth &&
     css`
-      display: block;
+      padding: 0.6rem 0;
       width: 100%;
     `}
 `;
