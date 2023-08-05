@@ -4,7 +4,7 @@ import Button from './Button';
 import { CartIcon } from './icons/CartIcon';
 import { ProductType } from '@/types';
 import { ButtonLink } from './ButtonLink';
-import { useCartContext } from './contexts/CartContext';
+import { useCartContext } from '../contexts/CartContext';
 
 const BG = styled.div`
   background-color: #222;

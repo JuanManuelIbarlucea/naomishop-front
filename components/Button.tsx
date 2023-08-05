@@ -19,6 +19,8 @@ export const ButtonStyle = css<ButtonProps>`
   display: inline-flex;
   text-decoration: none;
   font-weight: bold;
+  align-items: center;
+  justify-content: center;
   svg {
     margin-right: 0.5rem;
     height: 1rem;
@@ -58,8 +60,8 @@ export const ButtonStyle = css<ButtonProps>`
     ${(props) =>
     props.size === 'lg' &&
     css`
-      font-size: 1.2rem;
-      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      padding: 0.4rem 1rem;
       svg {
         height: 1.2rem;
       }

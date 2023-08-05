@@ -2,7 +2,7 @@ import { ProductType } from '@/types';
 import styled from 'styled-components';
 import Button from './Button';
 import Link from 'next/link';
-import { useCartContext } from './contexts/CartContext';
+import { useCartContext } from '../contexts/CartContext';
 
 const WhiteBox = styled(Link)`
   background-color: #fff;

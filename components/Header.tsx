@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import Center from './Center';
 import { CartIcon } from './icons/CartIcon';
-import { useCartContext } from './contexts/CartContext';
+import { useCartContext } from '../contexts/CartContext';
 
 const StyledHeader = styled.header`
   background-color: #222;

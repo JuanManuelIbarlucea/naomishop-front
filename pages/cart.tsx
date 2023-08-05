@@ -1,7 +1,6 @@
 import Button from '@/components/Button';
 import Center from '@/components/Center';
-import Header from '@/components/Header';
-import { useCartContext } from '@/components/contexts/CartContext';
+import { useCartContext } from '@/contexts/CartContext';
 import { ProductType } from '@/types';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
@@ -10,18 +9,13 @@ import Table from '@/components/Table';
 import CheckoutForm from '@/components/CheckoutForm';
 import { useRouter } from 'next/router';
 import CheckIcon from '@/components/icons/CheckIcon';
+import WhiteBox from '@/components/WhiteBox';
 
 const ColumnsWrapper = styled.div`
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 40px;
   margin-top: 40px;
-`;
-
-const Box = styled.div`
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 30px;
 `;
 
 const ProductImageBox = styled.div`
@@ -80,11 +74,11 @@ export default function CartPage() {
     return (
       <Center>
         <SuccessBox>
-          <Box>
+          <WhiteBox>
             <CheckIcon />
             <h1>Thank you for your purchase!</h1>
             <p>We will email you when your order is on it's way.</p>
-          </Box>
+          </WhiteBox>
         </SuccessBox>
       </Center>
     );
@@ -94,7 +88,7 @@ export default function CartPage() {
     <>
       <Center>
         <ColumnsWrapper>
-          <Box>
+          <WhiteBox>
             <h2>Cart</h2>
             {!cartProducts?.length && <div>There&apos;s nothing here!</div>}
             {cartProducts?.length > 0 && (
@@ -142,12 +136,12 @@ export default function CartPage() {
                 </tbody>
               </Table>
             )}
-          </Box>
+          </WhiteBox>
           {!!cartProducts.length && (
-            <Box>
+            <WhiteBox>
               <h2>Order information</h2>
               <CheckoutForm cartProducts={cartProducts} />
-            </Box>
+            </WhiteBox>
           )}
         </ColumnsWrapper>
       </Center>

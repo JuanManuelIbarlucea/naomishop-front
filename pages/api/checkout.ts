@@ -64,8 +64,8 @@ export default async function handler(
     line_items,
     mode: 'payment',
     customer_email: email,
-    success_url: `${process.env.URL}/cart?success=1`,
-    cancel_url: `${process.env.URL}/cart?canceled=1`,
+    success_url: `${process.env.URL}:${req.headers.host}/cart?success=1`,
+    cancel_url: `${process.env.URL}:${req.headers.host}/cart?canceled=1`,
     metadata: {
       orderId: newOrder._id.toString(),
     },
