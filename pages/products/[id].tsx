@@ -54,7 +54,7 @@ export default function ProductPage({ product }: { product: ProductType }) {
             <Price>${product.price}</Price>
             <div>
               <Button
-                fullWidth
+                fullwidth
                 primary
                 size="lg"
                 onClick={() => addProduct(product._id)}

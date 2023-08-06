@@ -85,7 +85,7 @@ export default function CheckoutForm({
         />
         <input type="hidden" name="products" value={cartProducts.join(',')} />
       </CityHolder>
-      <Button onClick={goToPayment} fullWidth primary>
+      <Button onClick={goToPayment} fullwidth primary>
         Continue to payment
       </Button>
     </>

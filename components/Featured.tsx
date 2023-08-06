@@ -89,12 +89,12 @@ export default function Featured({ product }: { product: ProductType }) {
                   outline
                   white
                   size="lg"
-                  fullWidth
+                  fullwidth
                 >
                   Read more
                 </ButtonLink>
                 <Button
-                  fullWidth
+                  fullwidth
                   primary
                   size="lg"
                   onClick={() => addProduct(product._id)}

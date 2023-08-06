@@ -7,7 +7,7 @@ export interface ButtonProps {
   white?: boolean;
   primary?: boolean;
   outline?: boolean;
-  fullWidth?: boolean;
+  fullwidth?: boolean;
   children?: ReactNode;
   onClick?: () => void;
 }
@@ -68,7 +68,7 @@ export const ButtonStyle = css<ButtonProps>`
       }
     `};
   ${(props) =>
-    props.fullWidth &&
+    props.fullwidth &&
     css`
       padding: 0.6rem 0;
       width: 100%;
