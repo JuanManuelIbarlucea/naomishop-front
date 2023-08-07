@@ -8,6 +8,8 @@ import { useState } from 'react';
 
 const StyledHeader = styled.header`
   background-color: #222;
+  position: sticky;
+  top: -1px;
 `;
 
 const Logo = styled(Link)`
@@ -18,9 +20,10 @@ const Logo = styled(Link)`
 `;
 
 const Wrapper = styled.div`
+  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0;
+  align-items: center;
 `;
 
 const StyledNav = styled.nav<any>`
@@ -79,6 +82,9 @@ export default function Header() {
     <StyledHeader>
       <Center>
         <Wrapper>
+          <NavButton onClick={() => setMobileNavActive((prev) => !prev)}>
+            <BarsIcon />
+          </NavButton>
           <Logo href={'/'}>Naomishop</Logo>
           <StyledNav
             mobileNavActive={mobileNavActive}
@@ -88,13 +94,10 @@ export default function Header() {
             <NavLink href={'/products'}>Products</NavLink>
             <NavLink href={'/categories'}>Categories</NavLink>
             <NavLink href={'/account'}>Account</NavLink>
-            <NavLink href={'/cart'}>
-              <CartIcon /> ({cartProducts?.length})
-            </NavLink>
           </StyledNav>
-          <NavButton onClick={() => setMobileNavActive((prev) => !prev)}>
-            <BarsIcon />
-          </NavButton>
+          <NavLink href={'/cart'}>
+            <CartIcon /> ({cartProducts?.length})
+          </NavLink>
         </Wrapper>
       </Center>
     </StyledHeader>

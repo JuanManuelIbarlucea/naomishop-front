@@ -12,6 +12,7 @@ import { useCartContext } from '@/contexts/CartContext';
 
 const ColWrapper = styled.div`
   display: grid;
+  justify-content: center;
   gap: 40px;
   margin: 40px 0;
 
@@ -36,6 +37,7 @@ const PriceRow = styled.div`
 const Price = styled.span`
   font-size: 1.5rem;
   font-weight: 700;
+  text-align: center;
 `;
 
 export default function ProductPage({ product }: { product: ProductType }) {

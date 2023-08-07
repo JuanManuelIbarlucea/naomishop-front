@@ -72,6 +72,10 @@ export const ButtonStyle = css<ButtonProps>`
     css`
       padding: 0.6rem 0;
       width: 100%;
+
+      @media screen and (min-width: 768px) {
+        padding: 0.6rem;
+      }
     `}
 `;
 
